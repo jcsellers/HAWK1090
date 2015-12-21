@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simple id="DebugMode" mode="readwrite" type="short">
+    <description>setting to activate legacy codes debug mode.  Unused. </description>
+    <value>0</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="InteractiveMode" mode="readwrite" type="short">
+    <description>1 or 0 toggle for Interactive Mode. </description>
+    <value>1</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="StatsMode" mode="readwrite" type="short">
+    <description>Display stats on the decoder at end of run. </description>
+    <value>0</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="userLat" mode="readwrite" type="double">
+    <description>obvious. </description>
+    <value>39</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="userLong" mode="readwrite" type="double">
+    <description>obvious. </description>
+    <value>80</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="NetMode" mode="readwrite" type="short">
+    <description>setting for networked mode of legacy code. untested. </description>
+    <value>1</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="NetOnlyMode" mode="readwrite" type="string">
+    <description>setting for networked mode of legacy code. untested. </description>
+    <value>0</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="ModeAC" mode="readwrite" type="short">
+    <description>Toggle for decoding mode a and c messages. </description>
+    <value>1</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="AggressiveMode" mode="readwrite" type="short">
+    <description>toggle for aggressive mode which applies phase correction to two bits of the message.</description>
+    <value>1</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="MessageCount" mode="readonly" type="longlong">
+    <description>Count of the number of good messages receieved. </description>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="PreambleCount" mode="readwrite" type="ulonglong">
+    <value>0</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+</properties>

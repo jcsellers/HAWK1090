@@ -1,0 +1,38 @@
+/* SSC-LANT REDHAWK COE 2015 All Rights Reserved.
+ * This software is provided with BSD rights.
+ * Original files retain their original rights/licenses.
+ * This is prototype/demo code and is provided with no warranties or guarantees, use at your own risk.
+ * Classification: UNCLASSIFIED
+ */
+
+#ifndef ADSBDECODER_MR_IMPL_H
+#define ADSBDECODER_MR_IMPL_H
+
+#include "ADSBdecoder_MR_base.h"
+
+
+// Include all the functionality from C source files
+extern "C"
+{
+#include "dump1090.h"
+}
+
+class ADSBdecoder_MR_i : public ADSBdecoder_MR_base
+{
+    ENABLE_LOGGING
+    uint32_t buf_size;
+
+    public:
+        ADSBdecoder_MR_i(const char *uuid, const char *label);
+        ~ADSBdecoder_MR_i();
+        int serviceFunction();
+
+
+    private:
+        void computeMagnitudeVector(std::vector<uint16_t> p, uint32_t in_buffer_length);
+        void setInteractiveMode(const short *oldValue, const short *newValue);
+
+
+};
+
+#endif // ADSBDECODER_MR_IMPL_H

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:8563eea0-8d23-46b4-b6ba-c0f3a77b88b5" name="ReceiveADSB_WF">
+  <description>This waveform provides an ADSB decoder based upon the malcom robb fork of dump1090 open source project. </description>
+  <componentfiles>
+    <componentfile id="ADSBdecoder_MR_50d5578d-d85e-4151-9b08-1f45b67fa032" type="SPD">
+      <localfile name="/components/ADSBdecoder_MR/ADSBdecoder_MR.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="ADSBdecoder_MR_50d5578d-d85e-4151-9b08-1f45b67fa032"/>
+      <componentinstantiation id="ADSBdecoder_MR_1">
+        <usagename>ADSBdecoder_MR_1</usagename>
+        <findcomponent>
+          <namingservice name="ADSBdecoder_MR_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="ADSBdecoder_MR_1"/>
+  </assemblycontroller>
+  <connections>
+    <connectinterface id="compMag">
+      <usesport>
+        <usesidentifier>dataOctet_out</usesidentifier>
+        <deviceusedbyapplication usesrefid="DCE:aa2421b3-03f7-4a72-8f56-6994e4594344"/>
+      </usesport>
+      <providesport>
+        <providesidentifier>input</providesidentifier>
+        <componentinstantiationref refid="ADSBdecoder_MR_1"/>
+      </providesport>
+    </connectinterface>
+  </connections>
+  <usesdevicedependencies>
+  <usesdevice id="DCE:aa2421b3-03f7-4a72-8f56-6994e4594344" type="usesDevice">
+      <propertyref refid="DCE:cdc5ee18-7ceb-4ae6-bf4c-31f983179b4d" value="FRONTEND::TUNER"/>
+      <structref refid="FRONTEND::tuner_allocation">
+        <simpleref refid="FRONTEND::tuner_allocation::tuner_type" value="RX_DIGITIZER"/>
+        <simpleref refid="FRONTEND::tuner_allocation::allocation_id" value="compMag"/>
+        <simpleref refid="FRONTEND::tuner_allocation::center_frequency" value="1090000000.0"/>
+        <simpleref refid="FRONTEND::tuner_allocation::sample_rate" value="2000000.0"/>
+      </structref>
+    </usesdevice>
+    </usesdevicedependencies>
+</softwareassembly>

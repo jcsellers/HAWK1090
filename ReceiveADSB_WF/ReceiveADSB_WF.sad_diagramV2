@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://sca.jpeojtrs.mil/diagram" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sad="http://sca.jpeojtrs.mil/sad" xmi:id="_ECmSoBBWEeWW4pfjePvIBw" type="Sad" name="ReceiveADSB_WF.sad_diagramV2" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ECmSoRBWEeWW4pfjePvIBw"/>
+  <styles xmi:type="diagram:EObjectContainerStyle" xmi:id="_ECmSohBWEeWW4pfjePvIBw" name="FindByStubContainer"/>
+  <element xmi:type="sad:SoftwareAssembly" href="ReceiveADSB_WF.sad.xml#DCE:8563eea0-8d23-46b4-b6ba-c0f3a77b88b5"/>
+</notation:Diagram>
